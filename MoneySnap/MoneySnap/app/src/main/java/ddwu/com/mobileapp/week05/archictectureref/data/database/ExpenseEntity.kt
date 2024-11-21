@@ -1,3 +1,8 @@
 package ddwu.com.mobileapp.week05.archictectureref.data.database
 
-data class ExpenseEntity()
+@Entity (tableName = "ref_table")
+data class ExpenseEntity(
+    @PrimaryKey (autoGenerate = true)
+    val _id: Int,
+    val name: String
+)
