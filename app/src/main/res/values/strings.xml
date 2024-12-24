@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MoneySnap</string>
+    <string name="url">https://www.koreaexim.go.kr/</string>
+    <string name="authkey">9OFTo1JgU4TEOei68k2iX5rOmNTTeieN</string>
 </resources>

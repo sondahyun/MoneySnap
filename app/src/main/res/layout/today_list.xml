@@ -25,37 +25,34 @@
         app:srcCompat="@android:drawable/ic_menu_send" />
 
     <TextView
-        android:id="@+id/place"
-        android:layout_width="70dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
-        android:text="장소"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/view" />
-
-    <TextView
         android:id="@+id/category"
         android:layout_width="183dp"
         android:layout_height="28dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="48dp"
         android:text="카테고리"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/place"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
+        android:id="@+id/place"
+        android:layout_width="70dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:text="장소"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <TextView
         android:id="@+id/amount"
         android:layout_width="128dp"
         android:layout_height="38dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
         android:text="0"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/place"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/place"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

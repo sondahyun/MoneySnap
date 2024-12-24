@@ -1,4 +1,4 @@
-package com.example.moneysnap.ui.fragments
+package com.example.moneysnap.ui.money
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.moneysnap.R
 
-class HomeFragment : Fragment() {
+class MoneyFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_money, container, false)
     }
 }
