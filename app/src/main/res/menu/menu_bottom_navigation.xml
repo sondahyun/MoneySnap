@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fragment_home"
+        android:title="홈"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/fragment_calendar"
+        android:title="캘린더"
+        android:icon="@drawable/ic_calendar"/>
+    <item
+        android:id="@+id/fragment_money"
+        android:title="환율"
+        android:icon="@drawable/ic_money"/>
+    <item
+        android:id="@+id/fragment_map"
+        android:title="지도"
+        android:icon="@drawable/ic_map"/>
+</menu>
