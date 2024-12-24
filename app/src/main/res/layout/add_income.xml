@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/add_transaction"
+        android:layout_width="247dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:text="거래 내역 추가하기"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <EditText
+        android:id="@+id/income_amount"
+        android:layout_width="326dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="164dp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_transaction"
+        android:hint="금액"
+        android:paddingStart="5dp"
+        />
+
+    <EditText
+        android:id="@+id/income_place"
+        android:layout_width="326dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:hint="수입처"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/income_amount"
+        />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="350dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="16dp"
+        android:text="확인"
+        android:textColorHighlight="#262D81"
+        android:textColorLink="#262D81"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

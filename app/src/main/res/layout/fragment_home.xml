@@ -41,8 +41,8 @@
 
     <View
         android:id="@+id/money"
-        android:layout_width="334dp"
-        android:layout_height="120dp"
+        android:layout_width="298dp"
+        android:layout_height="116dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/main_cal"
@@ -72,38 +72,60 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/today_list"
-                android:layout_width="441dp"
-                android:layout_height="868dp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/today_list"
+                    android:layout_width="406dp"
+                    android:layout_height="1037dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="-162dp" />
+
+                <Button
+                    android:id="@+id/add_button"
+                    android:layout_width="112dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="292dp"
+                    android:layout_marginTop="680dp"
+                    android:background="#262D81"
+                    android:backgroundTint="#262D81"
+                    android:drawableTint="#262D81"
+                    android:text="추가"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/today_list" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
     </ScrollView>
 
     <TextView
         android:id="@+id/todayExpense"
-        android:layout_width="144dp"
-        android:layout_height="39dp"
+        android:layout_width="122dp"
+        android:layout_height="40dp"
         android:text="0"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/money"
         app:layout_constraintEnd_toEndOf="@+id/money"
-        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintHorizontal_bias="0.318"
         app:layout_constraintStart_toEndOf="@+id/today1"
         app:layout_constraintTop_toTopOf="@+id/money"
-        app:layout_constraintVertical_bias="0.703" />
+        app:layout_constraintVertical_bias="0.802" />
 
     <TextView
         android:id="@+id/todayIncome"
-        android:layout_width="140dp"
-        android:layout_height="38dp"
+        android:layout_width="116dp"
+        android:layout_height="37dp"
         android:layout_marginEnd="36dp"
         android:text="0"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/money"
         app:layout_constraintEnd_toEndOf="@+id/money"
         app:layout_constraintTop_toTopOf="@+id/money"
-        app:layout_constraintVertical_bias="0.292" />
+        app:layout_constraintVertical_bias="0.303" />
 
     <TextView
         android:id="@+id/today1"
@@ -113,5 +135,8 @@
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/main_cal"
         app:layout_constraintTop_toBottomOf="@+id/today" />
+
+    <!-- 항상 화면 하단에 고정된 추가 버튼 -->
+    <!--        app:backgroundTint="@color/primaryColor" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

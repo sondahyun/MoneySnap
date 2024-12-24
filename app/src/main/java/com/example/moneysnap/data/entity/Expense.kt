@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class Expense(
     @PrimaryKey (autoGenerate = true)
     val _id: Int,
-    val amount: Double, // 지출 금액
+    val amount: Int, // 지출 금액
     val category: String, // 지출 카테고리 (예: 음식, 교통)
     val date: String, // 지출 날짜
     val description: String? = null, // 지출 상세 설명
