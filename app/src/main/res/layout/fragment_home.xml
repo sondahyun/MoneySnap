@@ -1,6 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/main_cal"
+        android:layout_width="108dp"
+        android:layout_height="121dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="-1dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/cal_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="12월"
+        app:layout_constraintEnd_toEndOf="@+id/main_cal"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="@+id/main_cal"
+        app:layout_constraintTop_toTopOf="@+id/main_cal" />
+
+    <TextView
+        android:id="@+id/cal_day"
+        android:layout_width="52dp"
+        android:layout_height="46dp"
+        android:text="24"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/main_cal"
+        app:layout_constraintEnd_toEndOf="@+id/main_cal"
+        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cal_month"
+        app:layout_constraintVertical_bias="0.368" />
+
+    <View
+        android:id="@+id/money"
+        android:layout_width="334dp"
+        android:layout_height="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/main_cal"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/today"
+        android:layout_width="132dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="24dp"
+        android:text="오늘의 수익 :"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/todayIncome"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toEndOf="@+id/main_cal"
+        app:layout_constraintTop_toTopOf="@+id/money" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="755dp"
+        tools:layout_editor_absoluteY="120dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/today_list"
+                android:layout_width="441dp"
+                android:layout_height="868dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/todayExpense"
+        android:layout_width="144dp"
+        android:layout_height="39dp"
+        android:text="0"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/money"
+        app:layout_constraintEnd_toEndOf="@+id/money"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toEndOf="@+id/today1"
+        app:layout_constraintTop_toTopOf="@+id/money"
+        app:layout_constraintVertical_bias="0.703" />
+
+    <TextView
+        android:id="@+id/todayIncome"
+        android:layout_width="140dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="36dp"
+        android:text="0"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/money"
+        app:layout_constraintEnd_toEndOf="@+id/money"
+        app:layout_constraintTop_toTopOf="@+id/money"
+        app:layout_constraintVertical_bias="0.292" />
+
+    <TextView
+        android:id="@+id/today1"
+        android:layout_width="132dp"
+        android:layout_height="37dp"
+        android:text="오늘의 지출 :"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/main_cal"
+        app:layout_constraintTop_toBottomOf="@+id/today" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
