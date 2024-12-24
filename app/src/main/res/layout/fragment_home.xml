@@ -6,12 +6,13 @@
     android:layout_height="match_parent">
 
     <View
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/main_cal"
         android:layout_width="108dp"
         android:layout_height="121dp"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="-1dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="-1dp" />
 
     <TextView
         android:id="@+id/cal_month"
