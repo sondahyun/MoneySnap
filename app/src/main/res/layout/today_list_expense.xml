@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <!-- 아이콘 -->
+    <ImageView
+        android:id="@+id/expense_icon"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_minus"
+        android:contentDescription="Expense Icon" />
+
+    <!-- 금액 -->
+    <TextView
+        android:id="@+id/expense_amount"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:text="₩0"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/expense_icon"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- 장소 -->
+    <TextView
+        android:id="@+id/expense_place"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="장소: 상점 이름"
+        android:textSize="16sp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/expense_icon"
+        app:layout_constraintTop_toBottomOf="@id/expense_amount"
+        />
+
+    <!-- 카테고리 -->
+    <TextView
+        android:id="@+id/expense_category"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:text="카테고리: 교통"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/expense_amount"
+        />
+
+    <!-- 날짜 -->
+    <TextView
+        android:id="@+id/expense_date"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="날짜: YYYY-MM-DD"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/expense_place"
+        app:layout_constraintTop_toBottomOf="@id/expense_category"
+        />
+
+    <!-- 설명 -->
+    <TextView
+        android:id="@+id/expense_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="설명: 지출에 대한 추가 정보"
+        android:textSize="16sp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintStart_toStartOf="@+id/expense_date"
+        app:layout_constraintTop_toBottomOf="@+id/expense_place"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Divider -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="#CCCCCC"
+        app:layout_constraintTop_toBottomOf="@+id/expense_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

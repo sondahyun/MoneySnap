@@ -79,4 +79,6 @@ dependencies {
     // Glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
+    // fragment에서 viewModel 사용을 위함
+    implementation ("androidx.fragment:fragment-ktx:1.5.7") // 최신 버전
 }

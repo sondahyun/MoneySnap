@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <!-- 아이콘 -->
+    <ImageView
+        android:id="@+id/income_icon"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_add"
+        android:contentDescription="Income Icon" />
+
+    <!-- 금액 -->
+    <TextView
+        android:id="@+id/income_amount"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:text="₩0"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/income_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 장소 -->
+    <TextView
+        android:id="@+id/income_place"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="출처: 장소 이름"
+        android:textSize="16sp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/income_icon"
+        app:layout_constraintTop_toBottomOf="@id/income_amount"
+        />
+
+    <!-- 날짜 -->
+    <TextView
+        android:id="@+id/income_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="날짜: YYYY-MM-DD"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/income_place"
+        app:layout_constraintTop_toBottomOf="@+id/income_amount"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 설명 -->
+    <TextView
+        android:id="@+id/income_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="상세 설명: 수입에 대한 추가 정보"
+        android:textSize="16sp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintStart_toStartOf="@+id/income_date"
+        app:layout_constraintTop_toBottomOf="@+id/income_place"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Divider -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="#CCCCCC"
+        app:layout_constraintTop_toBottomOf="@+id/income_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

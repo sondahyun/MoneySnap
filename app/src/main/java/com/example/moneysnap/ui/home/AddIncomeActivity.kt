@@ -12,10 +12,9 @@ import com.example.moneysnap.data.entity.Income
 import com.example.moneysnap.databinding.AddIncomeBinding
 import com.example.moneysnap.ui.income.IncomeViewModel
 import com.example.moneysnap.ui.income.IncomeViewModelFactory
-import java.text.SimpleDateFormat
 import java.util.*
 
-class IncomeActivity : AppCompatActivity() {
+class AddIncomeActivity : AppCompatActivity() {
     private lateinit var binding: AddIncomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
