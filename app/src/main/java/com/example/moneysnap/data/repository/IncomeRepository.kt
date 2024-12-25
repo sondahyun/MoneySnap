@@ -16,7 +16,7 @@ class IncomeRepository(private val incomeDao: IncomeDao) {
     }
 
     // 해당 하는 날의 총 수익
-    fun getTotalIncomeByDate(date: String): Flow<Double> {
+    fun getTotalIncomeByDate(date: String): Flow<Int> {
         return incomeDao.getTotalIncomeByDate(date)
     }
 

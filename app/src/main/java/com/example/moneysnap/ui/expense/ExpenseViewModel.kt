@@ -18,7 +18,7 @@ class ExpenseViewModel(private val expenseRepo: ExpenseRepository) : ViewModel()
     }
 
     // 해당 하는 날의 총 지출
-    fun getTotalExpenseByDate(date: String): LiveData<Double> {
+    fun getTotalExpenseByDate(date: String): LiveData<Int> {
         return expenseRepo.getTotalExpenseByDate(date).asLiveData()
     }
 

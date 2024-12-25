@@ -114,8 +114,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/today_list"
                 android:layout_width="match_parent"
-                android:layout_height="724dp"
-                android:layout_marginTop="2dp"/>
+                android:layout_height="746dp"
+                android:layout_marginTop="2dp" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

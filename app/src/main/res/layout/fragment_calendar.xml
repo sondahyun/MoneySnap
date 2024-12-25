@@ -120,7 +120,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/calendarRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="350dp"
         android:paddingStart="16dp"
         android:paddingRight="16dp"
         android:scrollbars="none"
@@ -151,7 +151,7 @@
             android:layout_marginTop="10dp"
             android:id="@+id/selectedRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="330dp"
             android:paddingStart="16dp"
             android:paddingRight="16dp"
             android:scrollbars="none"

@@ -19,7 +19,7 @@ interface IncomeDao {
 
     // 해당 하는 날의 총 수익
     @Query("SELECT SUM(amount) FROM incomes WHERE date = :date")
-    fun getTotalIncomeByDate(date: String): Flow<Double>
+    fun getTotalIncomeByDate(date: String): Flow<Int>
 
     // 해당 하는 _id 의 수익 삭제
     @Query("DELETE FROM incomes WHERE _id = :id")

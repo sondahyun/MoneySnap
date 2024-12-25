@@ -9,7 +9,7 @@ class ExpenseRepository(private val expenseDao: ExpenseDao) {
     fun getExpensesByDate(date: String): Flow<List<Expense>> = expenseDao.getExpensesByDate(date)
 
     // 해당 하는 날의 총 지출
-    fun getTotalExpenseByDate(date: String): Flow<Double> =  expenseDao.getTotalExpenseByDate(date)
+    fun getTotalExpenseByDate(date: String): Flow<Int> =  expenseDao.getTotalExpenseByDate(date)
 
     // 지출 추가
     suspend fun insertExpense(expense: Expense) {

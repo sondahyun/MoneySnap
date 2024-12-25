@@ -16,7 +16,7 @@ class IncomeViewModel(private val incomeRepo: IncomeRepository) : ViewModel() {
     }
 
     // 특정 날짜의 총 수익 데이터를 LiveData로 반환
-    fun getTotalIncomeByDate(date: String): LiveData<Double> {
+    fun getTotalIncomeByDate(date: String): LiveData<Int> {
         return incomeRepo.getTotalIncomeByDate(date).asLiveData()
     }
 

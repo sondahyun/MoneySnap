@@ -18,7 +18,7 @@ interface ExpenseDao {
 
     // 해당 하는 날의 총 지출
     @Query("SELECT SUM(amount) FROM expenses WHERE date = :date")
-    fun getTotalExpenseByDate(date: String): Flow<Double>
+    fun getTotalExpenseByDate(date: String): Flow<Int>
 
     // 해당 하는 _id 의 지출 삭제
     @Query("DELETE FROM expenses WHERE _id = :id")
