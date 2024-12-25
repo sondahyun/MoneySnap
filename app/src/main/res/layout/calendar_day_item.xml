@@ -21,10 +21,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:fontFamily="@font/pretendardregular"
         android:id="@+id/tv_day_plus"
         android:layout_width="49dp"
         android:layout_height="20dp"
+        android:fontFamily="@font/pretendardregular"
         android:gravity="center"
         android:paddingStart="3dp"
         android:paddingEnd="3dp"
@@ -33,6 +33,7 @@
         android:textColor="@color/black"
         android:textSize="9sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_cell_day" />
 

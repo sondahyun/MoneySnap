@@ -6,6 +6,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- LBS 이용 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:name=".MoneySnapApplication"
         android:allowBackup="true"
@@ -37,6 +41,8 @@
             android:exported="true" />
         <activity
             android:name=".ui.home.AddIncomeActivity"
+            android:exported="true" />
+        <activity android:name=".ui.map.MapActivity"
             android:exported="true" />
 
     </application>

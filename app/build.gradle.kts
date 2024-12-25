@@ -82,4 +82,7 @@ dependencies {
 
     // fragment에서 viewModel 사용을 위함
     implementation ("androidx.fragment:fragment-ktx:1.5.7") // 최신 버전
+
+    // Google Play Services
+    implementation("com.google.android.gms:play-services-location:21.3.0")
 }
