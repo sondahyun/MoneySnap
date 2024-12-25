@@ -1,79 +1,67 @@
 package com.example.moneysnap
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moneysnap.databinding.ActivityMainBinding
-import com.example.moneysnap.ui.expense.ExpenseViewModel
-import com.example.moneysnap.ui.expense.ExpenseViewModelFactory
+import com.example.moneysnap.ui.home.HomeFragment
 import com.example.moneysnap.ui.calendar.CalendarFragment
 import com.example.moneysnap.ui.map.MapFragment
 import com.example.moneysnap.ui.money.MoneyFragment
-import com.example.moneysnap.ui.home.HomeFragment
-import com.example.moneysnap.ui.income.IncomeViewModel
-import com.example.moneysnap.ui.income.IncomeViewModelFactory
 
 class MainActivity : AppCompatActivity() {
-
-    val TAG = "MainActivity"
 
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
-    // IncomeViewModel
-    private val incomeViewModel: IncomeViewModel by viewModels {
-        IncomeViewModelFactory((application as MoneySnapApplication).incomeRepository)
-    }
-
-    // ExpenseViewModel
-    private val expenseViewModel: ExpenseViewModel by viewModels {
-        ExpenseViewModelFactory((application as MoneySnapApplication).expenseRepository)
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
         setContentView(binding.root)
 
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
+        val navigateTo = intent.getStringExtra("navigate_to")
+
+        if (navigateTo == "HomeFragment") {
+            showHomeFragment()
+        } else if (savedInstanceState == null) {
+            binding.bottomNavigationView.selectedItemId = R.id.fragment_home
+            showHomeFragment()
+        }
 
         setBottomNavigationView()
-
-        // 앱 초기 실행 시 홈화면으로 설정
-        if (savedInstanceState == null) {
-            binding.bottomNavigationView.selectedItemId = R.id.fragment_home
-        }
     }
 
-    fun setBottomNavigationView() {
+    private fun showHomeFragment() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_container, HomeFragment())
+            .commit()
+    }
+
+    private fun setBottomNavigationView() {
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.fragment_home -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_container, HomeFragment()).commit()
+                    showHomeFragment()
                     true
                 }
 
                 R.id.fragment_calendar -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_container, CalendarFragment()).commit()
+                        .replace(R.id.main_container, CalendarFragment())
+                        .commit()
                     true
                 }
 
                 R.id.fragment_money -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_container, MoneyFragment()).commit()
+                        .replace(R.id.main_container, MoneyFragment())
+                        .commit()
                     true
                 }
 
                 R.id.fragment_map -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_container, MapFragment()).commit()
+                        .replace(R.id.main_container, MapFragment())
+                        .commit()
                     true
                 }
 
