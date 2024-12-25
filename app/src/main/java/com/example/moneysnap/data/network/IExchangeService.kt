@@ -10,5 +10,4 @@ interface IExchangeService {
         @Query("searchdate") searchdate: String, // 검색 요청 날짜 (ex) 2015-01-01, 20150101, (DEFAULT)현재일)
         @Query("data") data: String, // 검색 요쳥 API 타입 (AP01 : 환율, AP02 : 대출금리, AP03 : 국제금리)
     ): List<Exchange>
-
 }

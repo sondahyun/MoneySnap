@@ -2,6 +2,8 @@ package com.example.moneysnap
 
 import android.app.Application
 import com.example.moneysnap.data.database.AppDatabase
+import com.example.moneysnap.data.network.ExchangeService
+import com.example.moneysnap.data.repository.ExchangeRepository
 import com.example.moneysnap.data.repository.ExpenseRepository
 import com.example.moneysnap.data.repository.IncomeRepository
 
@@ -19,4 +21,14 @@ class MoneySnapApplication : Application() {
     val incomeRepository by lazy {
         IncomeRepository(database.incomeDao())
     }
+
+    val exchangeService by lazy {
+        ExchangeService(this)
+    }
+
+    val exchangeRepository by lazy {
+        ExchangeRepository(exchangeService)
+    }
+
+
 }

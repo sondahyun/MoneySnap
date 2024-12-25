@@ -1,7 +1,11 @@
 package com.example.moneysnap.ui.exchange
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.moneysnap.data.network.Exchange
 import com.example.moneysnap.data.repository.ExchangeRepository
+import kotlinx.coroutines.launch
 
 
 class ExchangeViewModel (val exchangeRepository: ExchangeRepository) : ViewModel() {
@@ -25,15 +29,21 @@ class ExchangeViewModel (val exchangeRepository: ExchangeRepository) : ViewModel
     }
     */
 
-//    private var _movies = MutableLiveData<List<Movie>?>()
-//    val movies = _movies
-//
-//    fun getMovies(key: String, date: String) = viewModelScope.launch {
-//        var result: List<Movie>?
-//        // withContext(Dispatchers.IO) {       // retrofit 에 coroutine 적용 시 불필요
-//        result = refRepository.getMovies(key, date)
-//        // }
-//        _movies.value = result
-//    }
+    private var _exchanges = MutableLiveData<List<Exchange>?>()
+    val exchanges = _exchanges
+
+    fun getExchanges(authkey: String, searchdate: String, data: String) = viewModelScope.launch {
+        try {
+            val result = exchangeRepository.getExchanges(authkey, searchdate, data)
+            if (result != null) {
+                _exchanges.value = result
+            } else {
+                _exchanges.value = emptyList() // 빈 리스트 설정
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            _exchanges.value = emptyList()
+        }
+    }
 
 }

@@ -46,6 +46,9 @@ class CalendarFragment : Fragment(), CalendarAdapter.OnItemListener {
 
         setMonthView()
 
+        // 기본으로 오늘 날짜를 선택
+        onItemClick(selectedDate)
+
         binding.btnPreviousMonth.setOnClickListener {
             selectedDate = selectedDate.minusMonths(1)
             setMonthView()
@@ -67,10 +70,10 @@ class CalendarFragment : Fragment(), CalendarAdapter.OnItemListener {
             daysInMonth,
             incomeViewModel,
             expenseViewModel,
-            viewLifecycleOwner, // LifecycleOwner 전달
+            viewLifecycleOwner,
             this
         )
-        val layoutManager = GridLayoutManager(requireContext(), 7) // 7열로 설정
+        val layoutManager = GridLayoutManager(requireContext(), 7)
         binding.calendarRecyclerView.layoutManager = layoutManager
         binding.calendarRecyclerView.adapter = calendarAdapter
     }
@@ -82,7 +85,7 @@ class CalendarFragment : Fragment(), CalendarAdapter.OnItemListener {
         val daysInMonth = yearMonth.lengthOfMonth()
 
         val firstOfMonth = selectedDate.withDayOfMonth(1)
-        val dayOfWeek = firstOfMonth.dayOfWeek.value % 7 // 일요일이 0이 되도록 설정
+        val dayOfWeek = firstOfMonth.dayOfWeek.value % 7
 
         for (i in 1 until dayOfWeek) {
             daysInMonthArray.add(null)
@@ -120,7 +123,6 @@ class CalendarFragment : Fragment(), CalendarAdapter.OnItemListener {
                         expenses.map { TransactionItem.ExpenseItem(it) })
                     .sortedByDescending { it.date }
 
-                // RecyclerView에 데이터 설정
                 transactionAdapter = TransactionAdapter(transactionItems)
                 binding.selectedRecyclerView.adapter = transactionAdapter
             }

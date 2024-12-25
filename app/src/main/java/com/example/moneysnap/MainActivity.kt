@@ -6,7 +6,7 @@ import com.example.moneysnap.databinding.ActivityMainBinding
 import com.example.moneysnap.ui.home.HomeFragment
 import com.example.moneysnap.ui.calendar.CalendarFragment
 import com.example.moneysnap.ui.map.MapFragment
-import com.example.moneysnap.ui.money.MoneyFragment
+import com.example.moneysnap.ui.exchange.MoneyFragment
 
 class MainActivity : AppCompatActivity() {
 
