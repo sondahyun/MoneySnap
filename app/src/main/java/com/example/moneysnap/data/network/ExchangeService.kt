@@ -1,6 +1,7 @@
 package com.example.moneysnap.data.network
 
 import android.content.Context
+import android.util.Log
 import com.example.moneysnap.R
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -50,6 +51,8 @@ class ExchangeService (val context: Context) {
 
         // coroutine (Retrofit에서 Coroutine 자체 지원)
         // suspend 함수 호출
+        Log.d("MoneyFragment", "ExchangeService 입장 성공")
+
         val root : List<Exchange> = exchangeService.getExchanges(authkey, searchdate, data)
         return root
 

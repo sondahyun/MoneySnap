@@ -1,5 +1,6 @@
 package com.example.moneysnap.ui.exchange
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -34,9 +35,11 @@ class ExchangeViewModel (val exchangeRepository: ExchangeRepository) : ViewModel
 
     fun getExchanges(authkey: String, searchdate: String, data: String) = viewModelScope.launch {
         try {
+            Log.d("MoneyFragment", "ExchangeViewModel 입장 성공")
             val result = exchangeRepository.getExchanges(authkey, searchdate, data)
             if (result != null) {
                 _exchanges.value = result
+                Log.d("MoneyFragment", "환율 정보 불러오기 성공: ${result.size}개의 데이터")
             } else {
                 _exchanges.value = emptyList() // 빈 리스트 설정
             }

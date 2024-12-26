@@ -9,6 +9,7 @@ class ExchangeRepository(private val exchangeService: ExchangeService) {
 
     suspend fun getExchanges(authkey: String, searchdate: String, data: String): List<Exchange>? {
         try {
+            Log.d("MoneyFragment", "ExchangeRepository 입장 성공")
             val response = exchangeService.getExchanges(authkey, searchdate, data)
             Log.d("ExchangeRepository", "Response: $response")
             return response
