@@ -2,10 +2,12 @@ package com.example.moneysnap
 
 import android.app.Application
 import com.example.moneysnap.data.database.AppDatabase
+import com.example.moneysnap.data.map.MapService
 import com.example.moneysnap.data.network.ExchangeService
 import com.example.moneysnap.data.repository.ExchangeRepository
 import com.example.moneysnap.data.repository.ExpenseRepository
 import com.example.moneysnap.data.repository.IncomeRepository
+import com.example.moneysnap.data.repository.MapRepository
 
 class MoneySnapApplication : Application() {
     // Lazy initialization for database
@@ -30,5 +32,11 @@ class MoneySnapApplication : Application() {
         ExchangeRepository(exchangeService)
     }
 
+    val mapService by lazy {
+        MapService(this)
+    }
 
+    val mapRepository by lazy {
+        MapRepository(mapService)
+    }
 }

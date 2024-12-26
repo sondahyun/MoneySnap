@@ -22,6 +22,11 @@
         android:theme="@style/Theme.MoneySnap"
         tools:targetApi="31">
 
+        <!-- google Map을 내 앱에 포함시켜서 사용 가능 -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCas_1Rp1eo-ULgmFYyovzUJlBdn0iN0qI" />
+
         <!-- MainActivity 등록 -->
         <activity
             android:name=".MainActivity"

@@ -11,10 +11,66 @@
         android:id="@+id/map_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Map Fragment"
+        android:text="주변 ATM기와 은행의 위치"
         android:textSize="24sp"
         android:layout_margin="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Button to move to current location -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_current_location"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_location"
+        android:contentDescription="Current Location"
+        app:layout_constraintStart_toEndOf="@id/map_title"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"/>
+
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/map_title"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <!-- Button to search nearby -->
+    <Button
+        android:id="@+id/btn_search_nearby"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="검색"
+        android:contentDescription="Search Nearby"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@id/search"
+        app:layout_constraintTop_toBottomOf="@+id/btn_current_location"
+        />
+
+    <fragment
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@id/search"
+        map:cameraTargetLat="37.606537"
+        map:cameraTargetLng="127.041758"
+        map:cameraZoom="17"
+        map:uiZoomControls="true"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

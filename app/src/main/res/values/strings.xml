@@ -2,4 +2,7 @@
     <string name="app_name">MoneySnap</string>
     <string name="url">https://www.koreaexim.go.kr/</string>
     <string name="authkey">9OFTo1JgU4TEOei68k2iX5rOmNTTeieN</string>
+    <string name="url_map">https://openapi.naver.com/</string>
+    <string name="naver_client_id">U5iRG2UVT6r6lXHLfsLb</string>
+    <string name="naver_client_secret">FmrxYIU5ww</string>
 </resources>
