@@ -47,8 +47,6 @@
         <activity
             android:name=".ui.home.AddIncomeActivity"
             android:exported="true" />
-        <activity android:name=".ui.map.MapActivity"
-            android:exported="true" />
 
     </application>
 
